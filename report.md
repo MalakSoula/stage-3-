@@ -1,6 +1,7 @@
 # **Authors** 
 
-Logy Khaled (@Logy), Alaa Hewela (@Alaa253), Rahma mamdouh Mohammed (@Rahmamam2000), Tawfek Ahmed Tawfek (@Tawfekahmed25)
+Logy Khaled (@Logy), Alaa Hewela (@Alaa253), Rahma mamdouh Mohammed (@Rahmamam2000), Tawfek Ahmed Tawfek (@Tawfekahmed25), Malak Abdelfattah Soula (@Malak),
+Zeyad Ashraf (@Zashraf03), Nourhan Mahmoud (@NourhanM1) , Mohammed Dahab (@mdahab7)
 
 ## **GithubRepo**
 
@@ -39,6 +40,39 @@ The analysis identified key **differentially expressed genes** between primary a
 
 ![image](https://github.com/user-attachments/assets/97e91b86-5b25-47c1-aa62-3878fc4797f8)
 
+# **Machine Learning Pipeline Overview**
+This section describes a machine learning pipeline for the classification of gene expression data from breast cancer using a Random Forest classifier. The goal is to classify samples through gene expression data into metastatic and primary breast cancers.
+
+# Data Preparation
+It begins by reading the dataset and cleaning; the genes with low variance are filtered out and those containing a lot of missing values. Preprocessed data are standardized so that all features must have the same scale.
+
+# Labeling
+Labels are provided for 40 samples, from which the first 20 are metastatic, labeled as 1, and the remaining 20 as primary, labeled as 0.
+
+# Dataset Split
+Now, the pre-labeled dataset is split into training and test sets where 80% of the data can be used for training and the remaining 20% has been kept for testing. This split takes those features into consideration that are highly interlinked with the given labels.
+
+# Model Training
+The model trains on the selected features. The model performed at a very good level as its achieving an accuracy of 75% and some other metrics, including confusion matrix and classification are used for further evaluation
+
+# Visualizations
+**1- Feature Importance Plot :**
+
+The importance of the top 20 genes for making the predictions in a horizontal bar chart shows which features are most important for the model's performance.
+
+![Picture1](https://github.com/user-attachments/assets/365ef218-4dc4-4624-a4f4-ec1c10b91cf0)
+
+ 
+**2- Confusion Matrix Heatmap :**
+
+It provides an overview of the model's performance by showing the count of true positives, true negatives, false positives, and false negatives of all the predictions.
+
+![Picture2](https://github.com/user-attachments/assets/019d587a-3ab4-4c49-adec-dab87ec263ee)
+ 
+These visualizations together provide information regarding the efficacy of the model and feature importance of various genes in the classification of breast cancer.
+
+
+
 # **Conclusion**
 
-This analysis suggests potential biomarkers for distinguishing between primary and metastatic breast cancer. Future research should focus on validating these biomarkers and exploring their potential therapeutic applications.
+This analysis suggests potential biomarkers for distinguishing between primary and metastatic breast cancer. The machine learning pipeline, utilizing a Random Forest classifier, achieved an accuracy of 75%. Future research should focus on validating these biomarkers and exploring their potential therapeutic applications, alongside enhancing machine learning models for improved classification.
