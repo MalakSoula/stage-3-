@@ -28,6 +28,6 @@ The script generates plots, including dot plots and bar plots, to visualize the 
 
 # Files
 bc_40_data.csv: Gene expression data used for the analysis.
-results.csv: CSV file containing results from the differential expression analysis.
+DESeq2 results.csv: CSV file containing results from the differential expression analysis.
 go_enrichment_results.csv: CSV file with results from GO enrichment analysis.
 kegg_enrichment_results.csv: CSV file with results from KEGG pathway enrichment analysis.
