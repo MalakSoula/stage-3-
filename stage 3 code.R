@@ -11,6 +11,8 @@ library(enrichplot)
 
 ##################################
 # Downloading data from GDC
+gdcprojects= getGDCprojects()
+getProjectSummary("CMI-MBC")
 gdcquery <- GDCquery(project = "CMI-MBC", data.category = "Transcriptome Profiling",
                      data.type = "Gene Expression Quantification",
                      experimental.strategy = "RNA-Seq",
