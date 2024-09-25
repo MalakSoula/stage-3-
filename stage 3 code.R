@@ -94,7 +94,7 @@ clean_ensembl_ids <- gsub("\\..*", "", deg_list)
 head(clean_ensembl_ids)
 
 
-# Map gene symbols to ENTREZ IDs (needed for enrichment analysis)
+# Map gene symbols to ENTREZ IDs
 gene_entrez <- bitr(clean_ensembl_ids, fromType = "ENSEMBL",
                     toType = "ENTREZID",
                     OrgDb = org.Hs.eg.db)
