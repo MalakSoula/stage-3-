@@ -85,7 +85,7 @@ deg_list <- rownames(degs)  # Extract gene IDs from the results
 deg_list
 
 # Save results to CSV
-write.csv(as.data.frame(res), "results.csv")  # Save DESeq2 results
+write.csv(as.data.frame(res), "DESeq2 results.csv")  # Save DESeq2 results
 
 ######################## Visualization #################################
 plotMA(res)
