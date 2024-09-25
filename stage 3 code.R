@@ -86,7 +86,7 @@ deg_list
 
 # Save results to CSV
 write.csv(as.data.frame(res), "results.csv")  # Save DESeq2 results
-write.csv(as.data.frame(degs), "degs.csv")  # Save significant DEGs
+
 ######################## Visualization #################################
 plotMA(res)
 
