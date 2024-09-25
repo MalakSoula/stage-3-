@@ -83,6 +83,10 @@ summary(res)
 degs <- res[which(res$padj < 0.05 & abs(res$log2FoldChange) > 1), ]
 deg_list <- rownames(degs)  # Extract gene IDs from the results
 deg_list
+
+# Save results to CSV
+write.csv(as.data.frame(res), "results.csv")  # Save DESeq2 results
+write.csv(as.data.frame(degs), "degs.csv")  # Save significant DEGs
 ######################## Visualization #################################
 plotMA(res)
 
@@ -107,9 +111,14 @@ print(gene_entrez)
 # GO enrichment analysis (Biological Process)
 go_enrich <- enrichGO(gene = gene_entrez$ENTREZID, OrgDb = org.Hs.eg.db, keyType = "ENTREZID",
                       ont = "BP", pAdjustMethod = "BH", pvalueCutoff = 0.05, qvalueCutoff = 0.05)
+# Save GO enrichment results to CSV
+write.csv(as.data.frame(go_enrich), "go_enrichment_results.csv")
 
 # KEGG pathway enrichment analysis
 kegg_enrich <- enrichKEGG(gene = gene_entrez$ENTREZID, organism = 'hsa', pvalueCutoff = 0.05)
+
+# Save KEGG enrichment results to CSV
+write.csv(as.data.frame(kegg_enrich), "kegg_enrichment_results.csv")
 
 ############################ visualization ###############################
 # Dot and bar plot for GO enrichment results
