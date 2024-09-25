@@ -65,7 +65,7 @@ data <- data[, selected_samples]
 sample_info <- sample_info[selected_samples, ]
 
 ####################################################################
-#DESeq2 Analysis
+######## DESeq2 Analysis
 
 # Remove genes with more than 25 zero values
 dds <- DESeqDataSetFromMatrix(countData = data, colData = sample_info, design = ~ tumor_descriptor)
@@ -85,7 +85,7 @@ deg_list
 plotMA(res)
 
 ############################################################################
-#functional enrichment analysis
+######## functional enrichment analysis
 
 # Remove version numbers from Ensembl IDs
 clean_ensembl_ids <- gsub("\\..*", "", deg_list)
@@ -109,7 +109,7 @@ go_enrich <- enrichGO(gene = gene_entrez$ENTREZID, OrgDb = org.Hs.eg.db, keyType
 # KEGG pathway enrichment analysis
 kegg_enrich <- enrichKEGG(gene = gene_entrez$ENTREZID, organism = 'hsa', pvalueCutoff = 0.05)
 
-###############################visualization###############################
+############################ visualization ###############################
 # Dot plot for GO enrichment results
 dotplot(go_enrich, showCategory = 10) + ggtitle("GO Enrichment Analysis (Biological Process)")
 
