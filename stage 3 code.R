@@ -110,8 +110,10 @@ go_enrich <- enrichGO(gene = gene_entrez$ENTREZID, OrgDb = org.Hs.eg.db, keyType
 kegg_enrich <- enrichKEGG(gene = gene_entrez$ENTREZID, organism = 'hsa', pvalueCutoff = 0.05)
 
 ############################ visualization ###############################
-# Dot plot for GO enrichment results
+# Dot and bar plot for GO enrichment results
 dotplot(go_enrich, showCategory = 10) + ggtitle("GO Enrichment Analysis (Biological Process)")
+barplot(go_enrich, showCategory = 10) + ggtitle("GO Enrichment Analysis (Biological Process)")
 
-# Dot plot for KEGG pathway enrichment results
+# Dot and bar plot for KEGG pathway enrichment results
 dotplot(kegg_enrich, showCategory = 10) + ggtitle("KEGG Pathway Enrichment Analysis")
+barplot(kegg_enrich, showCategory = 10) + ggtitle("KEGG Pathway Enrichment Analysis")
