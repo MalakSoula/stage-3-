@@ -30,6 +30,7 @@ gdcquery <- GDCquery(project = "CMI-MBC", data.category = "Transcriptome Profili
                                             "MBCProject_1542_T2_RNA_1", "MBCProject_4989_T2_RNA_1", "MBCProject_0026_T1_RNA_1", "MBCProject_5927_T1_RNA_1", 
                                             "MBCProject_6127_T2_RNA_1"))
 output <- getResults(gdcquery)
+GDCdownload(gdcquery)
 gdcbrca <- GDCprepare(gdcquery, summarizedExperiment = TRUE)
 data <- assay(gdcbrca, "unstranded")
 
